@@ -33,13 +33,13 @@ public class FrameEjercicio1 extends JFrame implements KeyListener {
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                if(e.getSource() != btnClickIzquierdo && e.getSource() != btnClickDerecho){
+                if(e.getSource() == btnClickIzquierdo && e.getSource() == btnClickDerecho){
+                    setTitle(String.format("Control de ratón - (X:%d Y:%d)", e.getX() + xFormulario, e.getY() + yFormulario));
+                }
+                else{
                     setTitle(String.format("Control de ratón - (X:%d Y:%d)", e.getX(), e.getY()));
                     xFormulario = e.getX();
                     yFormulario = e.getY();
-                }
-                else{
-                    setTitle(String.format("Control de ratón - (X:%d Y:%d)", e.getX() + xFormulario, e.getY() + yFormulario));
                 }
             }
 
