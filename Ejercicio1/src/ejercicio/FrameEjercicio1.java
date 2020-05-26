@@ -24,9 +24,6 @@ public class FrameEjercicio1 extends JFrame implements KeyListener {
 
         class MouseHandler extends MouseAdapter { // Uso el adaptador para no escribir funciones vacías
 
-            int xFormulario = 0;
-            int yFormulario = 0;        
-
             @Override
             public void mouseExited(MouseEvent e) {
                 setTitle(titulo);
@@ -34,13 +31,14 @@ public class FrameEjercicio1 extends JFrame implements KeyListener {
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                if(e.getSource() == btnClickIzquierdo && e.getSource() == btnClickDerecho){
-                    setTitle(String.format(titulo + " - (X:%d Y:%d)", e.getX() + xFormulario, e.getY() + yFormulario));
+                if(e.getSource() == btnClickIzquierdo){
+                    setTitle(String.format(titulo + " - (X:%d Y:%d)", e.getX() + 100, e.getY() + 5));
+                }
+                else if(e.getSource() == btnClickDerecho){
+                    setTitle(String.format(titulo + " - (X:%d Y:%d)", e.getX() + 223, e.getY() + 5));
                 }
                 else{
                     setTitle(String.format(titulo + " - (X:%d Y:%d)", e.getX(), e.getY()));
-                    xFormulario = e.getX();
-                    yFormulario = e.getY();
                 }
             }
 
