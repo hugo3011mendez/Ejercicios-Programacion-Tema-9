@@ -46,9 +46,9 @@ public class FrameEjercicio1 extends JFrame implements KeyListener {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                if (e.getButton() == 1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     btnClickIzquierdo.setBackground(colorFondoBotones);
-                } else if (e.getButton() == 3) {
+                } else if (e.getButton() == MouseEvent.BUTTON3) {
                     btnClickDerecho.setBackground(colorFondoBotones);
                 }
             }
