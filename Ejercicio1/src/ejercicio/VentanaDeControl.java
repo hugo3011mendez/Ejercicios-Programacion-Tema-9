@@ -18,6 +18,8 @@ public class VentanaDeControl extends JDialog implements ActionListener, ItemLis
     JButton btnCambiarTitulo;
     JComboBox cbColores;
 
+    Color colores[] = {Color.RED, Color.YELLOW, Color.GREEN, Color.CYAN}; // Creo un array de colores para cambiarlos con el combobox
+
     public VentanaDeControl(FrameEjercicio1 panelDeControl) {
         super(panelDeControl, true); // Es un formulario de diálogo, que indica que hasta que es cerrado no se puede hacer nada con el formulario principal
         setLayout(new FlowLayout());
@@ -63,17 +65,22 @@ public class VentanaDeControl extends JDialog implements ActionListener, ItemLis
     public void itemStateChanged(ItemEvent e) {
         FrameEjercicio1 panelDeControl = (FrameEjercicio1)this.getOwner(); // Declaro el formulario principal del ejercicio para poder trabajar con él
 
-        if(cbColores.getSelectedItem() == "Rojo"){
-            panelDeControl.colorFondoBotones = Color.RED;
-        }
-        else if(cbColores.getSelectedItem() == "Amarillo"){
-            panelDeControl.colorFondoBotones = Color.YELLOW;
-        }
-        else if(cbColores.getSelectedItem() == "Verde"){
-            panelDeControl.colorFondoBotones = Color.GREEN; 
-        }
-        else if(cbColores.getSelectedItem() == "Cyan"){
-            panelDeControl.colorFondoBotones = Color.CYAN; 
+        switch (cbColores.getSelectedIndex()){
+            case 0:
+                panelDeControl.colorFondoBotones = colores[0];
+            break;
+
+            case 1:
+                panelDeControl.colorFondoBotones = colores[1];
+            break;
+
+            case 2:
+                panelDeControl.colorFondoBotones = colores[2];
+            break;
+
+            case 3:
+                panelDeControl.colorFondoBotones = colores[3];
+            break;
         }
     }
 }
