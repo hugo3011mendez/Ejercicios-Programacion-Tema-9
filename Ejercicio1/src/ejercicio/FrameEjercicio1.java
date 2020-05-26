@@ -14,6 +14,7 @@ public class FrameEjercicio1 extends JFrame implements KeyListener {
     JButton btnClickIzquierdo, btnClickDerecho;
     JLabel lblTeclas;
 
+    String titulo = "Control de Ratón"; // Creo una variable para gestionar el título del formulario
     Color colorFondoBotones = Color.RED; // Declaro una variable para gestionar el color al que cambia el fondo de los botones
 
     public FrameEjercicio1() {
@@ -28,16 +29,16 @@ public class FrameEjercicio1 extends JFrame implements KeyListener {
 
             @Override
             public void mouseExited(MouseEvent e) {
-                setTitle("Control de Ratón");
+                setTitle(titulo);
             }
 
             @Override
             public void mouseMoved(MouseEvent e) {
                 if(e.getSource() == btnClickIzquierdo && e.getSource() == btnClickDerecho){
-                    setTitle(String.format("Control de ratón - (X:%d Y:%d)", e.getX() + xFormulario, e.getY() + yFormulario));
+                    setTitle(String.format(titulo + " - (X:%d Y:%d)", e.getX() + xFormulario, e.getY() + yFormulario));
                 }
                 else{
-                    setTitle(String.format("Control de ratón - (X:%d Y:%d)", e.getX(), e.getY()));
+                    setTitle(String.format(titulo + " - (X:%d Y:%d)", e.getX(), e.getY()));
                     xFormulario = e.getX();
                     yFormulario = e.getY();
                 }

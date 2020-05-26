@@ -42,7 +42,7 @@ public class VentanaDeControl extends JDialog implements ActionListener, ItemLis
 
         addWindowListener(new WindowAdapter() { // Aquí programo la confirmación al salir de esta ventana usando el adaptador de WindowListener
             public void windowClosing(WindowEvent e) {
-                int res = JOptionPane.showConfirmDialog(null, "Deseas cerrar el programa?", "Configuración",
+                int res = JOptionPane.showConfirmDialog(null, "Deseas cerrar este formulario?", "Configuración",
                         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
                 if (res == JOptionPane.OK_OPTION) {
@@ -55,7 +55,8 @@ public class VentanaDeControl extends JDialog implements ActionListener, ItemLis
     @Override
     public void actionPerformed(ActionEvent e) {
         FrameEjercicio1 panelDeControl = (FrameEjercicio1)this.getOwner(); // Declaro el formulario principal del ejercicio para poder trabajar con él
-        panelDeControl.setTitle(txtNuevoTitulo.getText());
+        panelDeControl.titulo = txtNuevoTitulo.getText();
+        panelDeControl.setTitle(panelDeControl.titulo);
     }
 
     @Override
