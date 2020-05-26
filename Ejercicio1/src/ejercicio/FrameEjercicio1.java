@@ -61,9 +61,9 @@ public class FrameEjercicio1 extends JFrame implements KeyListener {
         }
 
         MouseHandler mh = new MouseHandler(); // Creo el MouseHandler
-        // Añado los listeners al formulario
-        addMouseListener(mh);
-        addMouseMotionListener(mh);   
+        // Añado los listeners al ContentPane
+        getContentPane().addMouseListener(mh);
+        getContentPane().addMouseMotionListener(mh);
         
         addKeyListener(this); // Añado el KeyListener
 
