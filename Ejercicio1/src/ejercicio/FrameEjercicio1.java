@@ -31,6 +31,13 @@ public class FrameEjercicio1 extends JFrame implements KeyListener {
 
             @Override
             public void mouseMoved(MouseEvent e) {
+                // if(e.getSource().getClass() == JButton){
+                    
+                // }
+                // else{
+                //     setTitle(String.format(titulo + " - (X:%d Y:%d)", e.getX(), e.getY()));
+                // }
+
                 if(e.getSource() == btnClickIzquierdo){
                     setTitle(String.format(titulo + " - (X:%d Y:%d)", e.getX() + 100, e.getY() + 5));
                 }

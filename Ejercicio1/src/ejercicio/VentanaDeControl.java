@@ -65,22 +65,6 @@ public class VentanaDeControl extends JDialog implements ActionListener, ItemLis
     public void itemStateChanged(ItemEvent e) {
         FrameEjercicio1 panelDeControl = (FrameEjercicio1)this.getOwner(); // Declaro el formulario principal del ejercicio para poder trabajar con él
 
-        switch (cbColores.getSelectedIndex()){
-            case 0:
-                panelDeControl.colorFondoBotones = colores[0];
-            break;
-
-            case 1:
-                panelDeControl.colorFondoBotones = colores[1];
-            break;
-
-            case 2:
-                panelDeControl.colorFondoBotones = colores[2];
-            break;
-
-            case 3:
-                panelDeControl.colorFondoBotones = colores[3];
-            break;
-        }
+        panelDeControl.colorFondoBotones = colores[cbColores.getSelectedIndex()];
     }
 }
